@@ -1,6 +1,6 @@
 # SimpleWeather
 
-## 오랜만에 보는 Int 자료형의 타입메서드 .random()
+## 📖 Int 자료형의 타입메서드 .random()
 
 ```swift=
 func randomTemperatureGenerator() -> String {
