@@ -3,7 +3,7 @@
 
 # 📖 발견한 점
 ## 1. 코드로 UI를 작성하면서 반복되는 내용이 많았다. -> 타입 메서드를 만들어 재사용 되는 부분에 사용하였다.
-```swift=
+```swift
 static func createUnitStack(axis: NSLayoutConstraint.Axis,
                             alignment: UIStackView.Alignment,
                             distribution: UIStackView.Distribution,
@@ -24,7 +24,7 @@ static func createUnitStack(axis: NSLayoutConstraint.Axis,
 - ex) stack.axis = .vertical -> .vertical 부분에 오른쪽 마우스 오른쪽 마우스 클릭 후 jump to definition로 들어가서 확인
 
 ## 2. 함수를 사용할 때 선택적 매개변수를 이용해서 유연한 함수를 만들었다.
-```swift=
+```swift
 static func createLabel(font: UIFont,
                         textAlignment: NSTextAlignment,
                         numberOfLines: Int,
@@ -43,7 +43,7 @@ static func createLabel(font: UIFont,
 }
 ```
 - 매개변수 자리의 text와 backgroundColor, textColor를 보면 기본값이 정해져있다. 저 함수를 어떻게 사용하는지 보자!
-```swift=
+```swift
 let mondayLabel: UILabel = {
     createLabel(font: UIFont.systemFont(ofSize: 20, weight: .regular),
                 textAlignment: .center,
@@ -55,7 +55,7 @@ let mondayLabel: UILabel = {
 - 위와 같이 동일한 함수를 이용해서 label을 생성 해주었다. 넣어주고 싶지 않은 값은 사용하지 않아도 생성할 수 있었다!
 
 ## 3. 제약 조건을 하나의 방법으로만 걸어 왔었는데 아래와 같이 다양하게 걸 수 있다.
-```swift=
+```swift
     // 기본적인 제약
     temperatureLabel.trailingAnchor.constraint(equalTo: verticalStack.trailingAnchor)
 
@@ -81,7 +81,7 @@ let mondayLabel: UILabel = {
 # 📖 코드 관련 사항
 ## 🍎 Int 자료형의 타입메서드 .random()
 
-```swift=
+```swift
 func randomTemperatureGenerator() -> String {
     return String(Int.random(in: 15..<35)) + "°"
 }
@@ -90,7 +90,7 @@ func randomTemperatureGenerator() -> String {
 ---
 ## 🍎 .withRenderingMode 함수
 
-```swift=
+```swift
 func randomWeatherImageGenerator() -> UIImage {
     let imageName = weathers.randomElement()!
     let image = UIImage(systemName: imageName)?.withRenderingMode(.alwaysOriginal)
@@ -99,7 +99,7 @@ func randomWeatherImageGenerator() -> UIImage {
 ```
 
 ### 원형은 이렇게 생겼다.
-```swift=
+```swift
 @available(iOS 7.0, *)
     open func withRenderingMode(_ renderingMode: UIImage.RenderingMode) -> UIImage
 ```
